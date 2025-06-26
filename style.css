@@ -1,170 +1,103 @@
+/* =================================================================
+   ciel___wedding のブランドイメージを基にしたスタイルシート
+   ================================================================= */
+
+/* -----------------------------------------------------------------
+ * 1. カラーパレット（色の定義）
+ * -----------------------------------------------------------------
+ * :root の中で、サイト全体で使う色を変数として定義します。
+ * これにより、後から色を一括で変更するのが簡単になります。
+ * 名前はアカウントの雰囲気に合わせて付けてみました。
+*/
 :root {
-    --font-serif: 'Playfair Display', serif;
-    --font-sans: 'Noto Sans JP', sans-serif;
-    --text-color: #333;
-    --background-color: #ffffff;
-    --border-color: #e0e0e0;
+  --background-color: #f4f2ef;       /* 背景色：ほんのり温かみのあるオフホワイト */
+  --text-primary: #4a4a4a;           /* 基本の文字色：真っ黒ではない、柔らかなチャコールグレー */
+  --accent-color: #3a506b;           /* アクセントカラー：ユーザー様ご指摘の、深みのある落ち着いた青 */
+  --accent-warm: #c5ae8d;            /* サブのアクセントカラー：砂浜や夕日のような、彩度を抑えたベージュ */
+  --border-color: #dcdcdc;           /* 罫線や区切り線の色：邪魔にならない薄いグレー */
+  --text-on-dark: #ffffff;           /* 濃い背景色の上に乗せる文字色：白 */
 }
 
+/* -----------------------------------------------------------------
+ * 2. 全体の基本スタイル
+ * ----------------------------------------------------------------- */
 body {
-    font-family: var(--font-sans);
-    color: var(--text-color);
-    background-color: var(--background-color);
-    margin: 0;
-    line-height: 1.8;
-    font-weight: 300;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  line-height: 1.7; /* 行と行の間を少し広めにとり、読みやすくします */
+  margin: 0;
+  padding: 0;
 }
 
-.main-header, .main-footer {
-    text-align: center;
-    padding: 2em 1em;
+/* サイトのコンテンツを中央に配置するためのラッパー（必要に応じて使用） */
+.container {
+  max-width: 960px;
+  margin: 40px auto; /* 上下に40px、左右は自動で中央揃え */
+  padding: 0 20px;
 }
 
-.main-header h1 {
-    font-family: var(--font-serif);
-    font-weight: 400;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    margin: 0;
+/* -----------------------------------------------------------------
+ * 3. 見出しや段落のスタイル
+ * ----------------------------------------------------------------- */
+h1, h2, h3 {
+  color: var(--accent-color); /* 見出しはアクセントカラーの深い青に */
+  font-weight: normal;        /* フォントの太さを標準に（上品な印象） */
 }
 
-main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 1em 2em;
+h1 {
+  font-size: 2.5rem; /* 1rem = 16px換算で40px */
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-section {
-    padding: 3em 0;
-    border-bottom: 1px solid var(--border-color);
-}
-section:last-child {
-    border-bottom: none;
+p {
+  font-size: 1rem; /* 16px */
+  margin-bottom: 20px;
 }
 
-.section-title, .section-subtitle {
-    text-align: center;
-}
-
-.section-title {
-    font-family: var(--font-serif);
-    font-weight: 400;
-    font-size: 1.8rem;
-    margin-bottom: 0.2em;
-}
-
-.section-subtitle {
-    margin-top: 0;
-    font-size: 0.9rem;
-    color: #777;
-}
-
-.table-container {
-    width: 100%;
-    overflow-x: auto; /* For responsive tables */
-    -webkit-overflow-scrolling: touch;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2em;
-    font-size: 0.9rem;
-}
-
-th, td {
-    padding: 1em;
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
-}
-
-thead th {
-    font-family: var(--font-sans);
-    font-weight: 400;
-    white-space: nowrap;
-    border-bottom-width: 2px;
-}
-
-tbody td {
-    vertical-align: middle;
-}
-
-td small {
-    display: block;
-    font-size: 0.8em;
-    color: #666;
-    margin-top: 0.2em;
-}
-
-.details-section {
-    padding: 2em 0;
-}
-
-.details-title {
-    font-family: var(--font-serif);
-    font-weight: 500;
-    text-align: center;
-    font-size: 1.3rem;
-    margin-bottom: 1.5em;
-}
-
-.details-section ul {
-    list-style: none;
-    padding-left: 0;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.details-section li {
-    margin-bottom: 0.8em;
-    padding-left: 1.5em;
-    position: relative;
-}
-
-.details-section li::before {
-    content: '·';
-    position: absolute;
-    left: 0;
-    top: -0.1em;
-    font-size: 1.5em;
-    color: #aaa;
-}
-
+/* -----------------------------------------------------------------
+ * 4. リンクとボタンのスタイル
+ * ----------------------------------------------------------------- */
 a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 400;
+  color: var(--accent-color);
+  text-decoration: none; /* 下線を消す */
+  transition: opacity 0.3s; /* ホバー時に滑らかな変化 */
 }
 
 a:hover {
-    text-decoration: underline;
+  opacity: 0.7; /* マウスを乗せると少し薄くなる */
+  text-decoration: underline; /* マウスを乗せたら下線を出す */
 }
 
-.main-footer {
-    background-color: #f9f9f9;
-    font-size: 0.8rem;
-    color: #888;
+/* 基本のボタン（メインの操作用） */
+.btn {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--text-on-dark);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px; /* 角を少し丸くする */
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
 }
-.main-footer p {
-    margin: 0.5em 0;
+
+.btn:hover {
+  background-color: #2c3e50; /* 少し濃い青に */
+  transform: translateY(-2px); /* 少し浮き上がるような効果 */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    main {
-        padding: 1em;
-    }
-    
-    .main-header h1 {
-        font-size: 1.8rem;
-    }
+/* サブのボタン（控えめな操作用） */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+}
 
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    th, td {
-        padding: 0.8em 0.5em;
-        font-size: 0.85rem;
-    }
+.btn-secondary:hover {
+  background-color: var(--accent-color);
+  color: var(--text-on-dark);
+  transform: translateY(-2px);
 }
