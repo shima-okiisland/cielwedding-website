@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header class="main-header">
-        <h1>ciel wedding</h1>
+        <div class="site-title">ciel wedding</div>
     </header>
 
-    <main>
-        <section class="plan-section">
-            <h2 class="section-title">Price Plan</h2>
+    <main class="content-wrapper">
+        <section class="plan-section fade-in">
+            <h1 class="section-title">PLAN</h1>
             <p class="section-subtitle">ドローン込み・OPムービー2 min固定プラン（2025年版）</p>
 
             <div class="table-container">
@@ -26,8 +26,8 @@
                         <tr>
                             <th>プラン名</th>
                             <th>価格 (税込)</th>
-                            <th>写真枚数</th>
-                            <th>OPムービー</th>
+                            <th>写真</th>
+                            <th>ムービー</th>
                             <th>ドローン</th>
                             <th>主な内容</th>
                             <th>備考</th>
@@ -35,87 +35,94 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Lite <small>〈平日限定〉</small></td>
-                            <td>¥119,800</td>
-                            <td>70 cut</td>
-                            <td>約2 min</td>
-                            <td>空撮1シーン</td>
-                            <td>ロケ1か所 / 撮影90 min / ドレス無料貸出<a href="#dress-note">*¹</a></td>
-                            <td>土日 +¥20,000</td>
+                            <td data-label="プラン名">Lite <small>〈平日限定〉</small></td>
+                            <td data-label="価格 (税込)">¥119,800</td>
+                            <td data-label="写真">70 cut</td>
+                            <td data-label="ムービー">約2 min</td>
+                            <td data-label="ドローン">空撮1シーン</td>
+                            <td data-label="主な内容">ロケ1か所 / 撮影90 min / ドレス無料貸出<a href="#dress-note">*¹</a></td>
+                            <td data-label="備考">土日 +¥20,000</td>
                         </tr>
                         <tr>
-                            <td>Standard</td>
-                            <td>¥159,800</td>
-                            <td>120 cut</td>
-                            <td>約2 min</td>
-                            <td>空撮1〜2シーン</td>
-                            <td>ロケ2か所 / 撮影2 h / ミニフォトブック20P</td>
-                            <td>平日・土日同額</td>
+                            <td data-label="プラン名">Standard</td>
+                            <td data-label="価格 (税込)">¥159,800</td>
+                            <td data-label="写真">120 cut</td>
+                            <td data-label="ムービー">約2 min</td>
+                            <td data-label="ドローン">空撮1〜2シーン</td>
+                            <td data-label="主な内容">ロケ2か所 / 撮影2 h / ミニフォトブック20P</td>
+                            <td data-label="備考">平日・土日同額</td>
                         </tr>
                         <tr>
-                            <td>Premium <small>〈4K＋縦動画〉</small></td>
-                            <td>¥209,800</td>
-                            <td>150 cut</td>
-                            <td>約2 min + 縦動画30 sec</td>
-                            <td>4K空撮 + ハイパーラプス</td>
-                            <td>ロケ2か所 / 長尺ムービー +4 min</td>
-                            <td>雨天でドローン不能時 −¥15,000 返金</td>
+                            <td data-label="プラン名">Premium <small>〈4K＋縦動画〉</small></td>
+                            <td data-label="価格 (税込)">¥209,800</td>
+                            <td data-label="写真">150 cut</td>
+                            <td data-label="ムービー">約2 min + 縦動画30 sec</td>
+                            <td data-label="ドローン">4K空撮 + ハイパーラプス</td>
+                            <td data-label="主な内容">ロケ2か所 / 長尺ムービー +4 min</td>
+                            <td data-label="備考">雨天ドローン不能時 −¥15,000</td>
                         </tr>
                         <tr>
-                            <td>Movie Only <small>〈平日〉</small></td>
-                            <td>¥98,000</td>
-                            <td>–</td>
-                            <td>約2 min <small>(おまかせ編集)</small></td>
-                            <td>空撮1シーン</td>
-                            <td>ロケ1か所 / 撮影1 h</td>
-                            <td>写真撮影なし</td>
+                            <td data-label="プラン名">Movie Only <small>〈平日〉</small></td>
+                            <td data-label="価格 (税込)">¥98,000</td>
+                            <td data-label="写真">–</td>
+                            <td data-label="ムービー">約2 min <small>(おまかせ)</small></td>
+                            <td data-label="ドローン">空撮1シーン</td>
+                            <td data-label="主な内容">ロケ1か所 / 撮影1 h</td>
+                            <td data-label="備考">写真撮影なし</td>
                         </tr>
                         <tr>
-                            <td>Photo Only <small>〈平日〉</small></td>
-                            <td>¥79,800</td>
-                            <td>120 cut</td>
-                            <td>–</td>
-                            <td>空撮1シーン</td>
-                            <td>ロケ1か所 / ドレス無料貸出<a href="#dress-note">*¹</a></td>
-                            <td>ムービー追加 +¥60,000</td>
+                            <td data-label="プラン名">Photo Only <small>〈平日〉</small></td>
+                            <td data-label="価格 (税込)">¥79,800</td>
+                            <td data-label="写真">120 cut</td>
+                            <td data-label="ムービー">–</td>
+                            <td data-label="ドローン">空撮1シーン</td>
+                            <td data-label="主な内容">ロケ1か所 / ドレス無料貸出<a href="#dress-note">*¹</a></td>
+                            <td data-label="備考">ムービー追加 +¥60,000</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <section class="details-section">
-            <h3 class="details-title">共通事項</h3>
-            <ul>
-                <li><strong>交通費:</strong> 新宿駅発着で同乗可 → ¥3,000 / その他実費 (上限¥25,000)</li>
-                <li><strong>雨天延期:</strong> 無料 (前日17:00判断)</li>
-                <li><strong>ロケ許可料:</strong> 実費をご負担いただきます</li>
-                <li><strong>お支払い:</strong> クレジットカード決済可 / 分割3回まで手数料無料</li>
-            </ul>
-        </section>
-
-        <section class="details-section">
-            <h3 class="details-title">ヘアメイクについて</h3>
-            <ul>
-                <li>ご希望の方へ、無料で提携ヘアメイクアーティストをご紹介します (料金¥45,000〜¥60,000目安)</li>
-                <li>ご指名後は、お客様とヘアメイク間で直接ご契約・お支払いとなります (予約金制)</li>
-                <li>当社はチャットへの同席と日程調整のサポートのみ行います</li>
-            </ul>
+        <section class="details-section fade-in">
+            <h2 class="section-title">GUIDE</h2>
+            <div class="guide-grid">
+                <div class="guide-item">
+                    <h3>共通事項</h3>
+                    <ul>
+                        <li><strong>交通費:</strong> 新宿駅発着同乗 ¥3,000 / その他実費 (上限¥25,000)</li>
+                        <li><strong>雨天延期:</strong> 無料 (前日17:00判断)</li>
+                        <li><strong>ロケ許可料:</strong> 実費ご負担</li>
+                        <li><strong>お支払い:</strong> カード決済可 / 分割3回まで手数料無料</li>
+                    </ul>
+                </div>
+                <div class="guide-item">
+                    <h3>ヘアメイクについて</h3>
+                    <ul>
+                        <li>提携アーティストを無料でご紹介 (料金¥45,000〜)</li>
+                        <li>お客様とアーティスト間で直接契約・お支払い</li>
+                        <li>当社は日程調整等をサポートします</li>
+                    </ul>
+                </div>
+                <div id="dress-note" class="guide-item">
+                    <h3>*¹ ドレス無料レンタル</h3>
+                    <ul>
+                        <li>レンタル無料、クリーニング代(¥10,000)のみご負担</li>
+                        <li>衣装持込の場合はクリーニング代不要</li>
+                    </ul>
+                </div>
+            </div>
         </section>
         
-        <section id="dress-note" class="details-section">
-            <h3 class="details-title">*¹ ドレス無料レンタル</h3>
-            <ul>
-                <li>レンタル自体は無料ですが、クリーニング代として¥10,000のみご負担いただきます</li>
-                <li>ご自身の衣装を持込まれる場合は、クリーニング代は不要です</li>
-            </ul>
+        <section class="cta-section fade-in">
+             <a href="#" class="cta-button">お問い合わせ・ご予約はこちら</a>
         </section>
 
     </main>
 
     <footer class="main-footer">
-        <p>このプラン表は、SNS・資料・公式サイトにそのまま掲載可能です。</p>
-        <p>ご要望があればさらに微調整いたします！</p>
+        <p>このプラン表はSNS・資料・公式サイトにそのまま掲載可能です。ご要望があればさらに微調整いたします！</p>
+        <p>&copy; 2025 ciel wedding. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
